@@ -1,0 +1,165 @@
+@import "./colors.scss";
+
+.mainContainer {
+  width: 92%;
+  padding: 3rem 0 1rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 4rem;
+
+  .header {
+    text-align: center;
+
+    .feature,
+    .powered {
+      color: $very-dark-blue;
+      letter-spacing: 0.5px;
+    }
+
+    .feature {
+      font-weight: 200;
+      font-size: 1.7rem;
+    }
+
+    .powered {
+      font-size: 1.6rem;
+      font-weight: 600;
+    }
+
+    .desc {
+      font-size: 1.3rem;
+      letter-spacing: 0.2px;
+      color: $grayish-blue;
+      margin-top: 1.4rem;
+    }
+  }
+
+  .cardsContainer {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+
+    article {
+      background-color: $white;
+      border-radius: 7px;
+      box-shadow: 0 0 10px 1px hsl(0, 0%, 87%);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      row-gap: 3rem;
+
+      div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        border-radius: 10px;
+      }
+
+      .top {
+        h4 {
+          font-size: 1.7rem;
+          color: $very-dark-blue;
+          margin-bottom: 0.5rem;
+        }
+
+        p {
+          font-size: 1.3rem;
+          letter-spacing: 0.4px;
+          color: $grayish-blue;
+        }
+      }
+
+      .bottom {
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+          width: 5rem;
+          min-width: 2.5rem;
+        }
+      }
+    }
+
+    .supervisor {
+      div {
+        background-color: $cyan;
+      }
+    }
+
+    .teamBuilder {
+      div {
+        background-color: $red;
+      }
+    }
+
+    .karma {
+      div {
+        background-color: $orange;
+      }
+    }
+
+    .calculator {
+      div {
+        background-color: $blue;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 650px) {
+  .mainContainer {
+    width: 55rem;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .mainContainer {
+    width: 70%;
+    max-width: 110rem;
+
+    .header {
+      .feature,
+      .powered {
+        font-size: 2.8rem;
+      }
+
+      .desc {
+        max-width: 50rem;
+        margin: 0 auto;
+        margin-top: 1rem;
+      }
+    }
+
+    .cardsContainer {
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: repeat(3, 1fr);
+
+      .supervisor {
+        grid-row: 1 / 2;
+        grid-column: 1 / 2;
+        transform: translateY(50%);
+      }
+
+      .teamBuilder {
+        grid-row: 1 / 2;
+        grid-column: 2 / 3;
+      }
+
+      .karma {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+      }
+
+      .calculator {
+        grid-row: 1 / 2;
+        grid-column: 3/ 4;
+        transform: translateY(50%);
+      }
+    }
+  }
+}
